@@ -154,6 +154,20 @@
             require-prior-idle-ms = <150>;
             layers = <0>;
         };
+
+        quote {
+            bindings = <&kp SINGLE_QUOTE>;
+            key-positions = <9 19>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
+
+        d-quote {
+            bindings = <&kp DOUBLE_QUOTES>;
+            key-positions = <19 30>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -206,10 +220,10 @@
 
         base_layer {
             bindings = <
-         &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y    &kp U          &kp I         &kp O        &kp P
-         &hml LGUI A  &hml LALT S  &hml LSHFT D  &hml LCTRL F  &kp G        &kp H    &hmr RCTRL J   &hmr RSHFT K  &hmr LALT L  &hmr RGUI SEMICOLON
-&kp TAB  &kp Z        &lt 4 X      &kp C         &kp V         &kp B        &kp N    &kp M          &kp COMMA     &kp DOT      &kp SLASH            &kp BACKSLASH
-                                   &kp DEL       &lt 1 ESCAPE  &kp SPACE    &kp RET  &kp BACKSPACE  &lt 2 A
+           &kp Q        &kp W        &kp E         &kp R         &kp T        &kp Y    &kp U          &kp I         &kp O        &kp P
+           &hml LGUI A  &hml LALT S  &hml LSHFT D  &hml LCTRL F  &kp G        &kp H    &hmr RCTRL J   &hmr RSHFT K  &hmr LALT L  &hmr RGUI SEMICOLON
+&kp GLOBE  &kp Z        &lt 4 X      &kp C         &kp V         &kp B        &kp N    &kp M          &kp COMMA     &kp DOT      &kp SLASH            &kp BACKSLASH
+                                     &kp DEL       &lt 1 ESCAPE  &kp SPACE    &kp RET  &kp BACKSPACE  &lt 2 A
             >;
         };
 
@@ -242,10 +256,10 @@
 
         alt+arrows {
             bindings = <
-       &none  &none  &none  &none      &none    &none         &kp PAGE_DOWN  &kp PAGE_UP  &none          &none
-       &none  &none  &none  &kp LCTRL  &none    &kp LA(LEFT)  &kp PAGE_DOWN  &kp PAGE_UP  &kp LA(RIGHT)  &none
-&none  &none  &none  &none  &none      &none    &none         &none          &none        &none          &none  &none
-                     &none  &none      &none    &none         &none          &none
+       &none  &none  &none       &none      &none    &kp LA(LEFT)  &kp PAGE_DOWN  &kp PAGE_UP  &kp LA(RIGHT)  &none
+       &none  &none  &kp LSHIFT  &kp LCTRL  &none    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &none
+&none  &none  &none  &none       &none      &none    &none         &none          &none        &none          &none  &none
+                     &none       &none      &none    &none         &none          &none
             >;
         };
     };
