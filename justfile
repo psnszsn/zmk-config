@@ -2,8 +2,13 @@ TIMESTAMP := `date -u +"%Y%m%d%H%M"`
 COMMIT := `git rev-parse --short HEAD 2>/dev/null`
 
 build-in-container board shield:
-    west build -s zmk/app -d build -b {{ board }} -- $(test -n "{{ shield }}" && echo "-DSHIELD={{ shield }}" ) -DZMK_CONFIG=/app/config
-    cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2"
+	west build \
+		-s {{ if board =~ "adv360pro" { "zmk-adv" } else { "zmk" } }}/app \
+		-d build \
+		-b {{ board }} -- \
+		{{ if shield == "" { "" } else { "-DSHIELD=" + shield } }} \
+		-DZMK_CONFIG=/app/config
+	cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2"
 
 build board shield:
     podman build --tag zmk --file Dockerfile .
