@@ -28,6 +28,7 @@ flash board shield:
 totem-right: (build "seeeduino_xiao_ble" "totem_right")
 totem-left: (build "seeeduino_xiao_ble" "totem_left")
 flash-totem-left: (flash "seeeduino_xiao_ble" "totem_left")
+flash-totem-right: (flash "seeeduino_xiao_ble" "totem_right")
 
 adv360pro-left: (build "adv360pro_left" "")
 flash-adv360pro-left: (flash "adv360pro_left" "")

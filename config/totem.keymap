@@ -14,6 +14,8 @@
     quick-tap-ms = <200>;
     require-prior-idle-ms = <150>;
     tapping-term-ms = <280>;
+    hold-trigger-on-release;
+    flavor = "balanced";
 };
 
 / {
@@ -230,8 +232,8 @@
         nav_layer {
             bindings = <
         &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LBKT    &kp RBKT  &kp N4  &kp N5  &kp N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LPAR    &kp RPAR  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
+        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LPAR    &kp RPAR  &kp N4  &kp N5  &kp N6  &kp KP_MINUS
+&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LBKT    &kp RBKT  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
                                &trans    &trans     &trans      &mo 3     &kp N0  &trans
             >;
         };
