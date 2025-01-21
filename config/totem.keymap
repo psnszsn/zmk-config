@@ -2,6 +2,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+#include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
 #define NAV  1
@@ -231,10 +232,10 @@
 
         nav_layer {
             bindings = <
-        &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp KP_PLUS
-        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LPAR    &kp RPAR  &kp N4  &kp N5  &kp N6  &kp KP_MINUS
-&trans  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LBKT    &kp RBKT  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
-                               &trans    &trans     &trans      &mo 3     &kp N0  &trans
+        &kp ESC    &bt BT_CLR  &kp UP    &kp EQUAL  &kp LBRC    &kp RBRC  &kp N7  &kp N8   &kp N9  &kp KP_PLUS
+        &kp LSHFT  &kp LEFT    &kp DOWN  &kp RIGHT  &kp LPAR    &kp RPAR  &kp N4  &kp N5   &kp N6  &kp KP_MINUS
+&tog 5  &kp DEL    &kp PG_UP   &kp CAPS  &kp PG_DN  &kp LBKT    &kp RBKT  &kp N1  &kp N2   &kp N3  &kp KP_MULTIPLY  &trans
+                               &trans    &trans     &trans      &mo 3     &kp N0  &kp DOT
             >;
         };
 
@@ -242,7 +243,7 @@
             bindings = <
         &kp EXCL      &kp AT           &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET     &kp AMPS      &kp RA(U)      &kp SQT           &kp DQT
         &none         &trans           &none     &trans    &trans       &kp LEFT      &kp DOWN      &kp UP         &kp RIGHT         &kp COLON
-&trans  &kp C_VOL_DN  &kp C_VOLUME_UP  &trans    &trans    &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp LESS_THAN  &kp GREATER_THAN  &kp BSLH   &trans
+&tog 5  &kp C_VOL_DN  &kp C_VOLUME_UP  &trans    &trans    &trans       &kp C_VOL_DN  &kp C_VOL_UP  &kp LESS_THAN  &kp GREATER_THAN  &kp BSLH   &trans
                                        &trans    &gif      &mo 3        &trans        &kp C_PP      &trans
             >;
         };
@@ -262,6 +263,15 @@
        &none  &none  &kp LSHIFT  &kp LCTRL  &none    &kp LEFT      &kp DOWN       &kp UP       &kp RIGHT      &none
 &none  &none  &none  &none       &none      &none    &none         &none          &none        &none          &none  &none
                      &none       &none      &none    &none         &none          &none
+            >;
+        };
+
+        mouse {
+            bindings = <
+        &none  &none           &mmv MOVE_UP    &none            &none    &none           &none           &none         &none            &none
+        &none  &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &none
+&tog 5  &none  &none           &none           &none            &none    &none           &none           &none         &none            &none  &none
+                               &none           &none            &none    &mkp LCLK       &mkp RCLK       &none
             >;
         };
     };
