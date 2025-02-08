@@ -19,6 +19,8 @@
     flavor = "balanced";
 };
 
+&mmv { acceleration-exponent = <2>; };
+
 / {
     combos {
         compatible = "zmk,combos";
