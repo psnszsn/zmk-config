@@ -24,7 +24,7 @@ def wait_for_pico():
     print("Waiting for Raspberry Pi Pico to be connected...")
     for device in iter(monitor.poll, None):
         print(device.get("ID_VENDOR_ID"))
-        if device.action == "add" and device.get("ID_VENDOR_ID") in ["239a", "2886"]:
+        if device.action == "add" and device.get("ID_VENDOR_ID") in ["239a", "2886", "2e8a"]:
             if node := device.device_node:
                 sys.stdout.write(node + "\n")
                 return node
