@@ -6,7 +6,7 @@ build-in-container board shield:
 		-s {{ if board =~ "adv360pro" { "zmk-adv" } else { "zmk" } }}/app \
 		-d build \
 		-b {{ board }} -- \
-		{{ if shield == "" { "" } else { "-DSHIELD=" + shield } }} \
+		{{ if shield == "" { "" } else { "-DSHIELD='" + shield +"'" } }} \
 		-DZMK_CONFIG=/app/config
 	cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2"
 
@@ -24,6 +24,7 @@ flash board shield:
     just build "{{ board }}" "{{ shield }}"
     doas env UF2="./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2" \
     	python3 flash.py
+    echo {{ COMMIT }}
 
 totem-right: (build "seeeduino_xiao_ble" "totem_right")
 totem-left: (build "seeeduino_xiao_ble" "totem_left")
@@ -34,3 +35,8 @@ flash-totem-reset: (flash "seeeduino_xiao_ble" "settings_reset")
 adv360pro-left: (build "adv360pro_left" "")
 flash-adv360pro-left: (flash "adv360pro_left" "")
 flash-adv360pro-right: (flash "adv360pro_right" "")
+
+sofle-left: (build "eyelash_sofle_left" "nice_view")
+flash-sofle-left: (flash "eyelash_sofle_left" "nice_view")
+flash-sofle-right: (flash "eyelash_sofle_right" "nice_view")
+flash-sofle-reset: (flash "eyelash_sofle_left" "settings_reset")
