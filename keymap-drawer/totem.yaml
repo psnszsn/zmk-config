@@ -40,20 +40,20 @@ layers:
   - BACKSPACE
   - {t: A, h: sim}
   num:
-  - ESC
-  - BT CLR
-  - UP
-  - '='
+  - ''
+  - ''
+  - ''
+  - ''
   - '{'
   - '}'
   - '7'
   - '8'
   - '9'
   - KP PLUS
-  - LSHFT
-  - LEFT
-  - DOWN
-  - RIGHT
+  - ''
+  - ''
+  - ''
+  - ''
   - (
   - )
   - '4'
@@ -61,10 +61,10 @@ layers:
   - '6'
   - KP MINUS
   - {t: mouse, h: toggle}
-  - DEL
-  - PG UP
-  - CAPS
-  - {t: PG DN, type: held}
+  - ''
+  - ''
+  - ''
+  - {t: num, h: sticky, type: held}
   - '['
   - ']'
   - '1'
