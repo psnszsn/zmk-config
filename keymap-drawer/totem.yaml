@@ -1,4 +1,4 @@
-layout: {qmk_keyboard: totem}
+layout: {zmk_keyboard: totem}
 layers:
   base:
   - Q
@@ -49,22 +49,22 @@ layers:
   - '7'
   - '8'
   - '9'
-  - KP PLUS
+  - '0'
   - ''
   - ''
   - ''
-  - ''
+  - {t: base, h: toggle}
   - (
   - )
   - '4'
   - '5'
   - '6'
-  - KP MINUS
+  - .
   - {t: mouse, h: toggle}
   - ''
   - ''
   - ''
-  - {t: num, h: sticky, type: held}
+  - {t: num, h: toggle, type: held}
   - '['
   - ']'
   - '1'
@@ -76,8 +76,8 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - adjust
-  - '0'
-  - .
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   sim:
   - '!'
   - '@'
@@ -129,11 +129,11 @@ layers:
   - F9
   - F12
   - '&bootloader'
+  - LEFT ALT
+  - LEFT SHIFT
+  - LCTRL
   - ''
-  - ''
-  - ''
-  - ''
-  - ''
+  - Ctl+Alt+F2
   - F4
   - F5
   - F6
@@ -144,7 +144,7 @@ layers:
   - {t: BT, h: '2'}
   - {t: BT, h: '3', type: held}
   - {t: BT, h: '4'}
-  - ''
+  - Ctl+Alt+F1
   - F1
   - F2
   - F3
