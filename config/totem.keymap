@@ -234,10 +234,10 @@
 
         num_layer {
             bindings = <
-        &none  &none  &none  &none  &kp LBRC    &kp RBRC  &kp N7  &kp N8   &kp N9  &kp KP_PLUS
-        &none  &none  &none  &none  &kp LPAR    &kp RPAR  &kp N4  &kp N5   &kp N6  &kp KP_MINUS
-&tog 5  &none  &none  &none  &sl 1      &kp LBKT    &kp RBKT  &kp N1  &kp N2   &kp N3  &kp KP_MULTIPLY  &trans
-                              &trans     &trans     &trans      &mo 3     &kp N0  &kp DOT
+        &none  &none  &none   &none   &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp N0
+        &none  &none  &none   &to 0   &kp LPAR    &kp RPAR  &kp N4  &kp N5  &kp N6  &kp DOT
+&tog 5  &none  &none  &none   &to 1   &kp LBKT    &kp RBKT  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
+                      &trans  &trans  &trans      &mo 3     &trans  &trans
             >;
         };
 
@@ -252,10 +252,10 @@
 
         adjust_layer {
             bindings = <
-       &sys_reset    &bt BT_CLR    &out OUT_TOG  &kp K         &none           &none  &kp F7  &kp F8  &kp F9  &kp F12
-       &bootloader   &none         &none         &none         &none           &none  &kp F4  &kp F5  &kp F6  &kp F11
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp F1  &kp F2  &kp F3  &kp F10  &none
-                                   &none         &none         &none           &none  &none   &none
+       &sys_reset    &bt BT_CLR    &out OUT_TOG    &kp K         &none           &none           &kp F7  &kp F8  &kp F9  &kp F12
+       &bootloader   &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LCTRL     &none           &kp LC(LA(F2))  &kp F4  &kp F5  &kp F6  &kp F11
+&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &kp LC(LA(F1))  &kp F1  &kp F2  &kp F3  &kp F10  &none
+                                   &none           &none         &none           &none           &none   &none
             >;
         };
 
