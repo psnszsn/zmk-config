@@ -40,3 +40,7 @@ sofle-left: (build "eyelash_sofle_left" "nice_view")
 flash-sofle-left: (flash "eyelash_sofle_left" "nice_view")
 flash-sofle-right: (flash "eyelash_sofle_right" "nice_view")
 flash-sofle-reset: (flash "eyelash_sofle_left" "settings_reset")
+
+klor-left: (build "nice_nano_v2" "klor_left")
+flash-klor-left: (flash "nice_nano_v2" "klor_left")
+flash-klor-rigth: (flash "nice_nano_v2" "klor_right")
