@@ -10,3 +10,7 @@ configuration for:
 ## HOW TO USE
 
 - `just totem-left`
+
+## Layout
+
+<img src="./keymap-drawer/totem.svg" alt="Layout" width="100%" />
