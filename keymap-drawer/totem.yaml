@@ -121,7 +121,7 @@ layers:
   - '&sys_reset'
   - BT CLR
   - OUT TOG
-  - K
+  - '&soft_off'
   - ''
   - ''
   - F7
@@ -297,4 +297,7 @@ combos:
   l: [base]
 - p: [19, 30]
   k: '"'
+  l: [base]
+- p: [27, 28]
+  k: _
   l: [base]
