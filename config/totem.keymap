@@ -173,6 +173,13 @@
             require-prior-idle-ms = <150>;
             layers = <0>;
         };
+
+        under2 {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <27 28>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -222,11 +229,12 @@
 
     keymap {
         compatible = "zmk,keymap";
+
         base_layer {
             bindings = <
            &kp Q        &kp W        &kp F         &kp P         &kp B        &kp J    &kp L          &kp U         &kp Y        &kp SEMICOLON
            &hml LGUI A  &hml LALT R  &hml LSHFT S  &hml LCTRL T  &kp G        &kp M    &hmr RCTRL N   &hmr RSHFT E  &hmr LALT I  &hmr RGUI O
-&kp GLOBE  &kp Z        &lt 4 X      &kp C         &lt 1 D       &kp V        &kp K    &kp H          &kp COMMA     &kp DOT      &kp SLASH            &kp BACKSLASH
+&kp GLOBE  &kp Z        &lt 4 X      &kp C         &lt 1 D       &kp V        &kp K    &kp H          &kp COMMA     &kp DOT      &kp SLASH      &kp BACKSLASH
                                      &kp DEL       &lt 1 ESCAPE  &kp SPACE    &kp RET  &kp BACKSPACE  &lt 2 A
             >;
         };
@@ -251,7 +259,7 @@
 
         adjust_layer {
             bindings = <
-       &sys_reset    &bt BT_CLR    &out OUT_TOG    &kp K         &none           &none           &kp F7  &kp F8  &kp F9  &kp F12
+       &sys_reset    &bt BT_CLR    &out OUT_TOG    &soft_off     &none           &none           &kp F7  &kp F8  &kp F9  &kp F12
        &bootloader   &kp LEFT_ALT  &kp LEFT_SHIFT  &kp LCTRL     &none           &kp LC(LA(F2))  &kp F4  &kp F5  &kp F6  &kp F11
 &none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &bt BT_SEL 3  &bt BT_SEL 4    &kp LC(LA(F1))  &kp F1  &kp F2  &kp F3  &kp F10  &none
                                    &none           &none         &none           &none           &none   &none
