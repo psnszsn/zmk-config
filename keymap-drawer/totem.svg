@@ -389,6 +389,30 @@ path.combo {
 <rect rx="6" ry="6" x="595" y="141" width="28" height="26" class="combo"/>
 <text x="609" y="154" class="combo tap">_</text>
 </g>
+<g class="combo combopos-22">
+<rect rx="6" ry="6" x="287" y="159" width="28" height="26" class="combo"/>
+<text x="301" y="172" class="combo tap">[</text>
+</g>
+<g class="combo combopos-23">
+<rect rx="6" ry="6" x="536" y="159" width="28" height="26" class="combo"/>
+<text x="550" y="172" class="combo tap">]</text>
+</g>
+<g class="combo combopos-24">
+<rect rx="6" ry="6" x="287" y="103" width="28" height="26" class="combo"/>
+<text x="301" y="116" class="combo tap">(</text>
+</g>
+<g class="combo combopos-25">
+<rect rx="6" ry="6" x="536" y="103" width="28" height="26" class="combo"/>
+<text x="550" y="116" class="combo tap">)</text>
+</g>
+<g class="combo combopos-26">
+<rect rx="6" ry="6" x="287" y="47" width="28" height="26" class="combo"/>
+<text x="301" y="60" class="combo tap">{</text>
+</g>
+<g class="combo combopos-27">
+<rect rx="6" ry="6" x="536" y="47" width="28" height="26" class="combo"/>
+<text x="550" y="60" class="combo tap">}</text>
+</g>
 </g>
 </g>
 <g transform="translate(30, 366)" class="layer-num">
