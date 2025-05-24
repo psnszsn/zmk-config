@@ -207,6 +207,13 @@
             require-prior-idle-ms = <150>;
             layers = <0>;
         };
+
+        under2 {
+            bindings = <&kp UNDERSCORE>;
+            key-positions = <31 32>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
     };
 
     macros {
