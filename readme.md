@@ -9,6 +9,7 @@ configuration for:
 
 ## HOW TO USE
 
+- Use [keymap editor](https://nickcoutsos.github.io/keymap-editor/)
 - `just totem-left`
 
 ## Layout

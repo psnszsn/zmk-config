@@ -1,5 +1,5 @@
-TIMESTAMP := `date -u +"%Y%m%d%H%M"`
-COMMIT := `git rev-parse --short HEAD 2>/dev/null`
+TIMESTAMP := env_var_or_default('TIMESTAMP', `date -u +"%Y%m%d%H%M"`)
+COMMIT := env_var_or_default('COMMIT', `git rev-parse --short HEAD 2>/dev/null`)
 
 build-in-container board shield:
 	west build \
@@ -11,9 +11,9 @@ build-in-container board shield:
 	cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2"
 
 build board shield:
-    podman build --tag zmk --file Dockerfile .
-    just -n build-in-container "{{ board }}" "{{ shield }}" 2>&1 | \
-    podman run --rm -i --name zmk \
+    nerdctl build --tag zmk --file Dockerfile .
+    just -n TIMESTAMP={{ TIMESTAMP }} COMMIT={{ COMMIT }} build-in-container "{{ board }}" "{{ shield }}" 2>&1 | \
+    nerdctl run --rm -i --name zmk \
     	-v ./firmware:/app/firmware \
     	-v ./config:/app/config:ro \
     	-v ./.git:/.git:ro \
