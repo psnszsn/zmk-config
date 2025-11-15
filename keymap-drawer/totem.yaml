@@ -53,7 +53,7 @@ layers:
   - ''
   - ''
   - ''
-  - {t: base, h: toggle}
+  - ''
   - (
   - )
   - '4'
@@ -63,8 +63,8 @@ layers:
   - {t: mouse, h: toggle}
   - ''
   - ''
-  - ''
-  - {t: num, h: toggle, type: held}
+  - {t: mouse, h: toggle}
+  - {t: game, h: toggle, type: held}
   - '['
   - ']'
   - '1'
@@ -77,7 +77,7 @@ layers:
   - {t: ▽, type: trans}
   - adjust
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - {t: num, h: toggle}
   sim:
   - '!'
   - '@'
@@ -116,7 +116,7 @@ layers:
   - adjust
   - {t: ▽, type: trans}
   - PP
-  - {type: held}
+  - {t: sim, h: toggle, type: held}
   adjust:
   - '&sys_reset'
   - BT CLR
@@ -155,7 +155,7 @@ layers:
   - ''
   - {type: held}
   - ''
-  - ''
+  - {t: adjust, h: toggle}
   alt+arrows:
   - ''
   - ''
@@ -233,7 +233,46 @@ layers:
   - ''
   - '&mkp LCLK'
   - '&mkp RCLK'
-  - ''
+  - {t: mouse, h: toggle}
+  game:
+  - ESCAPE
+  - Q
+  - W
+  - E
+  - R
+  - '1'
+  - '2'
+  - '3'
+  - '4'
+  - '5'
+  - TAB
+  - A
+  - S
+  - D
+  - F
+  - '6'
+  - T
+  - Y
+  - I
+  - M
+  - {t: ▽, type: trans}
+  - LEFT SHIFT
+  - Z
+  - X
+  - C
+  - V
+  - G
+  - B
+  - H
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
+  - LCTRL
+  - {t: ▽, type: trans}
+  - SPACE
+  - RET
+  - {t: ▽, type: trans}
+  - {t: game, h: toggle}
 combos:
 - p: [0, 1]
   k: ESC
