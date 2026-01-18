@@ -283,10 +283,10 @@
 
         num_layer {
             bindings = <
-        &none  &none  &none   &none   &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp N0
-        &none  &none  &none   &none   &kp LPAR    &kp RPAR  &kp N4  &kp N5  &kp N6  &kp DOT
-&tog 5  &none  &none  &to 5   &to 6   &kp LBKT    &kp RBKT  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
-                      &trans  &trans  &trans      &mo 3     &trans  &tog 1
+        &none  &none  &none   &kp SCROLLLOCK  &kp LBRC    &kp RBRC  &kp N7  &kp N8  &kp N9  &kp N0
+        &none  &none  &none   &none           &kp LPAR    &kp RPAR  &kp N4  &kp N5  &kp N6  &kp DOT
+&tog 5  &none  &none  &to 5   &to 6           &kp LBKT    &kp RBKT  &kp N1  &kp N2  &kp N3  &kp KP_MULTIPLY  &trans
+                      &trans  &trans          &trans      &mo 3     &trans  &tog 1
             >;
         };
 

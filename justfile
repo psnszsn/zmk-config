@@ -26,11 +26,11 @@ flash board shield:
     	python3 flash.py
     echo {{ COMMIT }}
 
-totem-right: (build "seeeduino_xiao_ble" "totem_right")
-totem-left: (build "seeeduino_xiao_ble" "totem_left")
-flash-totem-left: (flash "seeeduino_xiao_ble" "totem_left")
-flash-totem-right: (flash "seeeduino_xiao_ble" "totem_right")
-flash-totem-reset: (flash "seeeduino_xiao_ble" "settings_reset")
+totem-right: (build "xiao_ble" "totem_right")
+totem-left: (build "xiao_ble" "totem_left")
+flash-totem-left: (flash "xiao_ble" "totem_left")
+flash-totem-right: (flash "xiao_ble" "totem_right")
+flash-totem-reset: (flash "xiao_ble" "settings_reset")
 
 adv360pro-left: (build "adv360pro_left" "")
 flash-adv360pro-left: (flash "adv360pro_left" "")
@@ -41,6 +41,6 @@ flash-sofle-left: (flash "eyelash_sofle_left" "nice_view")
 flash-sofle-right: (flash "eyelash_sofle_right" "nice_view")
 flash-sofle-reset: (flash "eyelash_sofle_left" "settings_reset")
 
-klor-left: (build "nice_nano_v2" "klor_left")
-flash-klor-left: (flash "nice_nano_v2" "klor_left")
-flash-klor-rigth: (flash "nice_nano_v2" "klor_right")
+klor-left: (build "nice_nano" "klor_left")
+flash-klor-left: (flash "nice_nano" "klor_left")
+flash-klor-rigth: (flash "nice_nano" "klor_right")
