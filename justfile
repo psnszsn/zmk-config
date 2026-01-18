@@ -32,11 +32,6 @@ flash-totem-left: (flash "xiao_ble" "totem_left")
 flash-totem-right: (flash "xiao_ble" "totem_right")
 flash-totem-reset: (flash "xiao_ble" "settings_reset")
 
-sofle-left: (build "eyelash_sofle_left" "nice_view")
-flash-sofle-left: (flash "eyelash_sofle_left" "nice_view")
-flash-sofle-right: (flash "eyelash_sofle_right" "nice_view")
-flash-sofle-reset: (flash "eyelash_sofle_left" "settings_reset")
-
 klor-left: (build "nice_nano" "klor_left")
 flash-klor-left: (flash "nice_nano" "klor_left")
 flash-klor-rigth: (flash "nice_nano" "klor_right")

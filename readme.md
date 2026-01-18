@@ -4,7 +4,7 @@ This is my personal [ZMK firmware](https://github.com/zmkfirmware/zmk/)
 configuration for:
 
 - [TOTEM](https://github.com/GEIGEIGEIST/totem) BLE (38 keys)
-- Kinesis Advantage360 PRO
+- [KLOR](https://github.com/GEIGEIGEIST/KLOR) (42 keys)
 
 
 ## HOW TO USE
