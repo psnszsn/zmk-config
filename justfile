@@ -3,7 +3,7 @@ COMMIT := env_var_or_default('COMMIT', `git rev-parse --short HEAD 2>/dev/null`)
 
 build-in-container board shield:
 	west build \
-		-s {{ if board =~ "adv360pro" { "zmk-adv" } else { "zmk" } }}/app \
+		-s zmk/app \
 		-d build \
 		-b {{ board }} -- \
 		{{ if shield == "" { "" } else { "-DSHIELD='" + shield +"'" } }} \
@@ -31,10 +31,6 @@ totem-left: (build "xiao_ble" "totem_left")
 flash-totem-left: (flash "xiao_ble" "totem_left")
 flash-totem-right: (flash "xiao_ble" "totem_right")
 flash-totem-reset: (flash "xiao_ble" "settings_reset")
-
-adv360pro-left: (build "adv360pro_left" "")
-flash-adv360pro-left: (flash "adv360pro_left" "")
-flash-adv360pro-right: (flash "adv360pro_right" "")
 
 sofle-left: (build "eyelash_sofle_left" "nice_view")
 flash-sofle-left: (flash "eyelash_sofle_left" "nice_view")
