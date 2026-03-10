@@ -35,3 +35,8 @@ flash-totem-reset: (flash "xiao_ble" "settings_reset")
 klor-left: (build "nice_nano" "klor_left")
 flash-klor-left: (flash "nice_nano" "klor_left")
 flash-klor-rigth: (flash "nice_nano" "klor_right")
+
+klor-wired-left: (build "nice_nano" "klor_wired_left")
+klor-wired-right: (build "nice_nano" "klor_wired_right")
+flash-klor-wired-left: (flash "nice_nano" "klor_wired_left")
+flash-klor-wired-right: (flash "nice_nano" "klor_wired_right")

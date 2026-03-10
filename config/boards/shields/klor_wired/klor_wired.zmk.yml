@@ -1,0 +1,14 @@
+file_format: "1"
+id: klor_wired
+name: KLOR Wired
+type: shield
+url: https://github.com/GEIGEIGEIST/KLOR
+requires: [pro_micro]
+exposes: [i2c_oled]
+features:
+  - keys
+  - display
+  - encoder
+siblings:
+  - klor_wired_left
+  - klor_wired_right

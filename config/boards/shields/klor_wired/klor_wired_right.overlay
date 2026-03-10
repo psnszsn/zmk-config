@@ -1,0 +1,44 @@
+#include "klor_wired.dtsi"
+
+/* TRRS routes two data pins (no crossover on PCB):
+ *   TRRS pad 3 (net "RX") = pro_micro 4 = P0.22
+ *   TRRS pad 4 (net "TX") = pro_micro 0 = P0.08
+ * Right: TX on P0.08, RX on P0.22 (swapped from left = software crossover) */
+&pinctrl {
+	uart0_default: uart0_default {
+		group1 {
+			psels = <NRF_PSEL(UART_TX, 0, 8)>;
+		};
+		group2 {
+			psels = <NRF_PSEL(UART_RX, 0, 22)>;
+			bias-pull-up;
+		};
+	};
+
+	uart0_sleep: uart0_sleep {
+		group1 {
+			psels = <NRF_PSEL(UART_TX, 0, 8)>,
+				<NRF_PSEL(UART_RX, 0, 22)>;
+			low-power-enable;
+		};
+	};
+};
+
+&default_transform {
+	col-offset = <6>;
+};
+
+&kscan0 {
+	col-gpios
+		= <&pro_micro 10 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 16 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 14 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 15 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 18 GPIO_ACTIVE_HIGH>
+		, <&pro_micro 19 GPIO_ACTIVE_HIGH>
+		;
+};
+
+&right_encoder {
+	status = "okay";
+};

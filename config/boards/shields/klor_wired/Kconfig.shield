@@ -1,0 +1,5 @@
+config SHIELD_KLOR_WIRED_LEFT
+    def_bool $(shields_list_contains,klor_wired_left)
+
+config SHIELD_KLOR_WIRED_RIGHT
+    def_bool $(shields_list_contains,klor_wired_right)
