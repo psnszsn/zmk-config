@@ -23,7 +23,7 @@
         totem = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
           name = "totem";
           src = srcFiles;
-          board = "xiao_ble";
+          board = "xiao_ble//zmk";
           shield = "totem_%PART%";
           zephyrDepsHash = "sha256-JgUJP/Aa3WCeTz9mgR+oJakFWcnxyg9xkjOuYzry3PY=";
         };
@@ -44,12 +44,32 @@
           zephyrDepsHash = "sha256-JgUJP/Aa3WCeTz9mgR+oJakFWcnxyg9xkjOuYzry3PY=";
         };
 
-        flash = zmk-nix.packages.${system}.flash.override { firmware = default; };
+        flash-totem-left = let
+          pkgs = nixpkgs.legacyPackages.${system};
+          python = pkgs.python3.withPackages (ps: [ ps.pyudev ]);
+        in pkgs.writeShellScriptBin "flash-totem-left" ''
+          doas env UF2="${totem}/zmk_left.uf2" ${python}/bin/python3 ${./flash.py}
+        '';
+
+        flash-totem-right = let
+          pkgs = nixpkgs.legacyPackages.${system};
+          python = pkgs.python3.withPackages (ps: [ ps.pyudev ]);
+        in pkgs.writeShellScriptBin "flash-totem-right" ''
+          doas env UF2="${totem}/zmk_right.uf2" ${python}/bin/python3 ${./flash.py}
+        '';
+
         update = zmk-nix.packages.${system}.update;
       });
 
-      devShells = forAllSystems (system: {
-        default = zmk-nix.devShells.${system}.default;
+      devShells = forAllSystems (system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in {
+        default = pkgs.mkShell {
+          inputsFrom = [ zmk-nix.devShells.${system}.default ];
+          packages = [
+            (pkgs.python3.withPackages (ps: [ ps.pyudev ]))
+          ];
+        };
       });
     };
 }
