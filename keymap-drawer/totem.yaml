@@ -21,7 +21,7 @@ layers:
   - {t: E, h: RSHFT}
   - {t: I, h: LALT}
   - {t: O, h: RGUI}
-  - GLOBE
+  - Hyper+T
   - Z
   - {t: X, h: alt+arrows}
   - C
