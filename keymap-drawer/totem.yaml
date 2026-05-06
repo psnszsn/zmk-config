@@ -38,7 +38,7 @@ layers:
   - SPACE
   - RET
   - BACKSPACE
-  - {t: F12, h: sim}
+  - {t: Hyper+T, h: sim}
   num:
   - ''
   - ''

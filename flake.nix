@@ -25,7 +25,7 @@
           src = srcFiles;
           board = "xiao_ble//zmk";
           shield = "totem_%PART%";
-          zephyrDepsHash = "sha256-JgUJP/Aa3WCeTz9mgR+oJakFWcnxyg9xkjOuYzry3PY=";
+          zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
         };
 
         klor = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
@@ -33,7 +33,7 @@
           src = srcFiles;
           board = "nice_nano";
           shield = "klor_%PART%";
-          zephyrDepsHash = "sha256-JgUJP/Aa3WCeTz9mgR+oJakFWcnxyg9xkjOuYzry3PY=";
+          zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
         };
 
         klor-wired = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
@@ -41,7 +41,7 @@
           src = srcFiles;
           board = "nice_nano";
           shield = "klor_wired_%PART%";
-          zephyrDepsHash = "sha256-JgUJP/Aa3WCeTz9mgR+oJakFWcnxyg9xkjOuYzry3PY=";
+          zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
         };
 
         flash-totem-left = let
