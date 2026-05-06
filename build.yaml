@@ -1,9 +1,9 @@
 include:
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: klor_wired_left
-  - board: nice_nano
+  - board: nice_nano//zmk
     shield: klor_wired_right
