@@ -8,7 +8,7 @@ build-in-container board shield:
 		-b {{ board }} -- \
 		{{ if shield == "" { "" } else { "-DSHIELD='" + shield +"'" } }} \
 		-DZMK_CONFIG=/app/config
-	cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2"
+	cp build/zephyr/zmk.uf2 "./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ replace(board, '/', '_') }}-{{ shield }}.uf2"
 
 build board shield:
     podman build --tag zmk --file Dockerfile .
@@ -17,12 +17,12 @@ build board shield:
     	-v ./firmware:/app/firmware \
     	-v ./config:/app/config:ro \
     	-v ./.git:/.git:ro \
-    	zmk /bin/bash -x
+        zmk /bin/bash -ex
     echo {{ COMMIT }}
 
 flash board shield:
-    just build "{{ board }}" "{{ shield }}"
-    doas env UF2="./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ board }}-{{ shield }}.uf2" \
+    just TIMESTAMP={{ TIMESTAMP }} COMMIT={{ COMMIT }} build "{{ board }}" "{{ shield }}"
+    doas env UF2="./firmware/{{ TIMESTAMP }}-{{ COMMIT }}-{{ replace(board, '/', '_') }}-{{ shield }}.uf2" \
     	$(which python3) flash.py
     echo {{ COMMIT }}
 
@@ -32,11 +32,13 @@ flash-totem-left: (flash "xiao_ble//zmk" "totem_left")
 flash-totem-right: (flash "xiao_ble//zmk" "totem_right")
 flash-totem-reset: (flash "xiao_ble//zmk" "settings_reset")
 
-klor-left: (build "nice_nano" "klor_left")
-flash-klor-left: (flash "nice_nano" "klor_left")
-flash-klor-rigth: (flash "nice_nano" "klor_right")
+klor-left: (build "nice_nano//zmk" "klor_left")
+klor-right: (build "nice_nano//zmk" "klor_right")
+flash-klor-left: (flash "nice_nano//zmk" "klor_left")
+flash-klor-right: (flash "nice_nano//zmk" "klor_right")
+alias flash-klor-rigth := flash-klor-right
 
-klor-wired-left: (build "nice_nano" "klor_wired_left")
-klor-wired-right: (build "nice_nano" "klor_wired_right")
-flash-klor-wired-left: (flash "nice_nano" "klor_wired_left")
-flash-klor-wired-right: (flash "nice_nano" "klor_wired_right")
+klor-wired-left: (build "nice_nano//zmk" "klor_wired_left")
+klor-wired-right: (build "nice_nano//zmk" "klor_wired_right")
+flash-klor-wired-left: (flash "nice_nano//zmk" "klor_wired_left")
+flash-klor-wired-right: (flash "nice_nano//zmk" "klor_wired_right")

@@ -31,7 +31,7 @@
         klor = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
           name = "klor";
           src = srcFiles;
-          board = "nice_nano";
+          board = "nice_nano//zmk";
           shield = "klor_%PART%";
           zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
         };
@@ -39,7 +39,7 @@
         klor-wired = zmk-nix.legacyPackages.${system}.buildSplitKeyboard {
           name = "klor-wired";
           src = srcFiles;
-          board = "nice_nano";
+          board = "nice_nano//zmk";
           shield = "klor_wired_%PART%";
           zephyrDepsHash = "sha256-yZd+C2k9Kb1TKzXS6rR3/Jcs3UAGeKmq0YwdylODRgs=";
         };
