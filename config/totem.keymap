@@ -222,6 +222,20 @@
             require-prior-idle-ms = <150>;
             layers = <0>;
         };
+
+        hyper_t_pf {
+            bindings = <&kp LS(LC(LA(LG(T))))>;
+            key-positions = <2 3>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
+
+        hyper_t_lu {
+            bindings = <&kp LS(LC(LA(LG(T))))>;
+            key-positions = <6 7>;
+            require-prior-idle-ms = <150>;
+            layers = <0>;
+        };
     };
 
     macros {
