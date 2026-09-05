@@ -358,3 +358,9 @@ combos:
 - p: [5, 6]
   k: '}'
   l: [base]
+- p: [2, 3]
+  k: Hyper+T
+  l: [base]
+- p: [6, 7]
+  k: Hyper+T
+  l: [base]
