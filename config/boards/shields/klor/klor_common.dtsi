@@ -38,10 +38,11 @@
 		status = "disabled";
 	};
 
-    sensors: sensors {
-        compatible = "zmk,keymap-sensors";
-        sensors = <&left_encoder &right_encoder>;
-    };
+    // No encoders populated on this build.
+    // sensors: sensors {
+    //     compatible = "zmk,keymap-sensors";
+    //     sensors = <&left_encoder &right_encoder>;
+    // };
 
 	// TODO: RGB node(s)
 };

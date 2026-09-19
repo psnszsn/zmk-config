@@ -11,12 +11,6 @@
 #define LOWER  2
 #define ADJUST 3
 
-&sensors {
-    left_encoder { triggers-per-rotation = <15>; };
-
-    right_encoder { triggers-per-rotation = <15>; };
-};
-
 &lt {
     quick-tap-ms = <200>;
     require-prior-idle-ms = <150>;
@@ -319,7 +313,6 @@
                                      &kp DEL       &lt 1 ESCAPE  &kp SPACE  &none       &none     &kp RET  &kp BACKSPACE  &lt 2 F12
             >;
 
-            sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &inc_dec_kp C_AC_FORWARD C_AC_BACK>;
         };
 
         num_layer {
