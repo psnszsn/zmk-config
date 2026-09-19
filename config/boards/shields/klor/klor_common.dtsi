@@ -16,6 +16,9 @@
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-matrix";
 		label = "KSCAN";
+		// Required for key presses to wake the board from deep sleep;
+		// without it ZMK suspends the matrix GPIOs before System OFF.
+		wakeup-source;
 
 		diode-direction = "col2row";		
 	};
